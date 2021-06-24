@@ -56,7 +56,7 @@ namespace KuzeyYeliTR
             this.label2.Location = new System.Drawing.Point(9, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 17);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Kategori Ad:";
             // 
             // txtKategoriId_Kategori
@@ -65,7 +65,7 @@ namespace KuzeyYeliTR
             this.txtKategoriId_Kategori.Name = "txtKategoriId_Kategori";
             this.txtKategoriId_Kategori.ReadOnly = true;
             this.txtKategoriId_Kategori.Size = new System.Drawing.Size(344, 22);
-            this.txtKategoriId_Kategori.TabIndex = 2;
+            this.txtKategoriId_Kategori.TabIndex = 1;
             // 
             // txtKategoriAd_Kategori
             // 
@@ -96,6 +96,7 @@ namespace KuzeyYeliTR
             // 
             // KategoriDuzenle
             // 
+            this.AcceptButton = this.btnTamam_kategori;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 215);

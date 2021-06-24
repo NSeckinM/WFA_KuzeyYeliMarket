@@ -58,6 +58,7 @@ namespace KuzeyYeliTR
             this.LstKategori.Size = new System.Drawing.Size(290, 388);
             this.LstKategori.TabIndex = 0;
             this.LstKategori.SelectedIndexChanged += new System.EventHandler(this.LstKategori_SelectedIndexChanged);
+            this.LstKategori.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LstKategori_KeyDown);
             // 
             // DgvUrunler
             // 

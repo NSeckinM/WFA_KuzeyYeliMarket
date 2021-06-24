@@ -144,5 +144,13 @@ namespace KuzeyYeliTR
                 Console.WriteLine("Silmek için önce bir ürün seçmelisiniz");
             }
         }
+
+        private void LstKategori_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                BtnKategoriSil.PerformClick();
+            }
+        }
     }
 }

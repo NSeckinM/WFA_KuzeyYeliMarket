@@ -73,5 +73,6 @@ namespace KuzeyYeliTR
         {
             Close();
         }
+
     }
 }
