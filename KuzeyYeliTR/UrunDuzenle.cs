@@ -37,6 +37,11 @@ namespace KuzeyYeliTR
 
         private void BtnTamam_Click(object sender, EventArgs e)
         {
+            if (txtAdUrun.Text.Length <= 0)
+            {
+                MessageBox.Show("Önce bir Ürün Adı giriniz.");
+                return;
+            }
             string ad = txtAdUrun.Text.Trim();
             decimal fiyat = Convert.ToDecimal(txtFiyatUrun.Text.Trim());
             int stok =Convert.ToInt32(txtStokAdetUrun.Text.Trim());

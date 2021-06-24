@@ -38,6 +38,14 @@ namespace KuzeyYeliTR
         {
             if (txtKategoriId_Kategori.Text.Length <= 0)
             {
+                if (txtKategoriAd_Kategori.Text.Length <= 0)
+                {
+                    MessageBox.Show("Önce bir kategori Adı giriniz.");
+                    return;
+                }
+                else
+                {
+
                 string ad = txtKategoriAd_Kategori.Text.Trim();
                 SqlCommand cmd = new SqlCommand("INSERT INTO Kategoriler(KategoriAd) VALUES(@p1)", con);
                 cmd.Parameters.AddWithValue("@p1", ad);
@@ -45,6 +53,8 @@ namespace KuzeyYeliTR
                 txtKategoriAd_Kategori.Clear();
                 txtKategoriId_Kategori.Clear();
                 Close();
+
+                }
             }
             else
             {
