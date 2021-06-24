@@ -22,6 +22,7 @@ namespace KuzeyYeliTR
         {
             con.Open();
             InitializeComponent();
+            DgvUrunler.AutoGenerateColumns = false; // otomatik sütün oluşturmayı durdurur
             KategorileriGetir();
             UrunleriGetir();
         }
@@ -151,6 +152,11 @@ namespace KuzeyYeliTR
             {
                 BtnKategoriSil.PerformClick();
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

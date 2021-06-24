@@ -36,9 +36,11 @@ namespace KuzeyYeliTR
             this.components = new System.ComponentModel.Container();
             this.BtnIptal = new System.Windows.Forms.Button();
             this.BtnTamam = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pboResim = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbKategoriUrun = new System.Windows.Forms.ComboBox();
+            this.kategorilerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kuzeyYeliDataSet1 = new KuzeyYeliTR.KuzeyYeliDataSet1();
             this.urunlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kuzeyYeliDataSet = new KuzeyYeliTR.KuzeyYeliDataSet();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,19 +52,19 @@ namespace KuzeyYeliTR
             this.txtAdUrun = new System.Windows.Forms.TextBox();
             this.txtIdUrun = new System.Windows.Forms.TextBox();
             this.urunlerTableAdapter = new KuzeyYeliTR.KuzeyYeliDataSetTableAdapters.UrunlerTableAdapter();
-            this.kuzeyYeliDataSet1 = new KuzeyYeliTR.KuzeyYeliDataSet1();
-            this.kategorilerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kategorilerTableAdapter = new KuzeyYeliTR.KuzeyYeliDataSet1TableAdapters.KategorilerTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.BtnResimSec = new System.Windows.Forms.Button();
+            this.ofdResim = new System.Windows.Forms.OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.pboResim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kategorilerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kuzeyYeliDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.urunlerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kuzeyYeliDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kuzeyYeliDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kategorilerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnIptal
             // 
-            this.BtnIptal.Location = new System.Drawing.Point(523, 82);
+            this.BtnIptal.Location = new System.Drawing.Point(523, 117);
             this.BtnIptal.Name = "BtnIptal";
             this.BtnIptal.Size = new System.Drawing.Size(115, 45);
             this.BtnIptal.TabIndex = 27;
@@ -74,19 +76,22 @@ namespace KuzeyYeliTR
             // 
             this.BtnTamam.Location = new System.Drawing.Point(523, 26);
             this.BtnTamam.Name = "BtnTamam";
-            this.BtnTamam.Size = new System.Drawing.Size(115, 35);
+            this.BtnTamam.Size = new System.Drawing.Size(115, 57);
             this.BtnTamam.TabIndex = 26;
             this.BtnTamam.Text = "Tamam";
             this.BtnTamam.UseVisualStyleBackColor = true;
             this.BtnTamam.Click += new System.EventHandler(this.BtnTamam_Click);
             // 
-            // pictureBox1
+            // pboResim
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(339, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(168, 136);
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
+            this.pboResim.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pboResim.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pboResim.Location = new System.Drawing.Point(339, 26);
+            this.pboResim.Name = "pboResim";
+            this.pboResim.Size = new System.Drawing.Size(168, 136);
+            this.pboResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboResim.TabIndex = 24;
+            this.pboResim.TabStop = false;
             // 
             // label5
             // 
@@ -109,6 +114,16 @@ namespace KuzeyYeliTR
             this.cmbKategoriUrun.Size = new System.Drawing.Size(201, 24);
             this.cmbKategoriUrun.TabIndex = 22;
             this.cmbKategoriUrun.ValueMember = "Id";
+            // 
+            // kategorilerBindingSource
+            // 
+            this.kategorilerBindingSource.DataMember = "Kategoriler";
+            this.kategorilerBindingSource.DataSource = this.kuzeyYeliDataSet1;
+            // 
+            // kuzeyYeliDataSet1
+            // 
+            this.kuzeyYeliDataSet1.DataSetName = "KuzeyYeliDataSet1";
+            this.kuzeyYeliDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // urunlerBindingSource
             // 
@@ -193,28 +208,34 @@ namespace KuzeyYeliTR
             // 
             this.urunlerTableAdapter.ClearBeforeFill = true;
             // 
-            // kuzeyYeliDataSet1
-            // 
-            this.kuzeyYeliDataSet1.DataSetName = "KuzeyYeliDataSet1";
-            this.kuzeyYeliDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kategorilerBindingSource
-            // 
-            this.kategorilerBindingSource.DataMember = "Kategoriler";
-            this.kategorilerBindingSource.DataSource = this.kuzeyYeliDataSet1;
-            // 
             // kategorilerTableAdapter
             // 
             this.kategorilerTableAdapter.ClearBeforeFill = true;
+            // 
+            // BtnResimSec
+            // 
+            this.BtnResimSec.Location = new System.Drawing.Point(339, 168);
+            this.BtnResimSec.Name = "BtnResimSec";
+            this.BtnResimSec.Size = new System.Drawing.Size(168, 34);
+            this.BtnResimSec.TabIndex = 28;
+            this.BtnResimSec.Text = "resim seç";
+            this.BtnResimSec.UseVisualStyleBackColor = true;
+            this.BtnResimSec.Click += new System.EventHandler(this.BtnResimSec_Click);
+            // 
+            // ofdResim
+            // 
+            this.ofdResim.FileName = "openFileDialog1";
+            this.ofdResim.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG;)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
             // 
             // UrunDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 207);
+            this.Controls.Add(this.BtnResimSec);
             this.Controls.Add(this.BtnIptal);
             this.Controls.Add(this.BtnTamam);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pboResim);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbKategoriUrun);
             this.Controls.Add(this.label4);
@@ -228,11 +249,11 @@ namespace KuzeyYeliTR
             this.Name = "UrunDuzenle";
             this.Text = "UrunDuzenle";
             this.Load += new System.EventHandler(this.UrunDuzenle_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboResim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kategorilerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kuzeyYeliDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.urunlerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kuzeyYeliDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kuzeyYeliDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kategorilerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,7 +263,7 @@ namespace KuzeyYeliTR
 
         private System.Windows.Forms.Button BtnIptal;
         private System.Windows.Forms.Button BtnTamam;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pboResim;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbKategoriUrun;
         private System.Windows.Forms.Label label4;
@@ -259,5 +280,7 @@ namespace KuzeyYeliTR
         private KuzeyYeliDataSet1 kuzeyYeliDataSet1;
         private System.Windows.Forms.BindingSource kategorilerBindingSource;
         private KuzeyYeliDataSet1TableAdapters.KategorilerTableAdapter kategorilerTableAdapter;
+        private System.Windows.Forms.Button BtnResimSec;
+        private System.Windows.Forms.OpenFileDialog ofdResim;
     }
 }

@@ -45,6 +45,11 @@ namespace KuzeyYeliTR
             this.BtnKategoriSil = new System.Windows.Forms.Button();
             this.BtnUrunSil = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Resim = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUrunler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboUrun)).BeginInit();
             this.SuspendLayout();
@@ -62,17 +67,25 @@ namespace KuzeyYeliTR
             // 
             // DgvUrunler
             // 
+            this.DgvUrunler.AllowUserToAddRows = false;
+            this.DgvUrunler.AllowUserToDeleteRows = false;
             this.DgvUrunler.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvUrunler.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Resim});
             this.DgvUrunler.Location = new System.Drawing.Point(358, 135);
             this.DgvUrunler.MultiSelect = false;
             this.DgvUrunler.Name = "DgvUrunler";
             this.DgvUrunler.ReadOnly = true;
             this.DgvUrunler.RowHeadersVisible = false;
             this.DgvUrunler.RowHeadersWidth = 51;
-            this.DgvUrunler.RowTemplate.Height = 24;
+            this.DgvUrunler.RowTemplate.Height = 80;
             this.DgvUrunler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvUrunler.Size = new System.Drawing.Size(807, 561);
             this.DgvUrunler.TabIndex = 1;
@@ -174,6 +187,54 @@ namespace KuzeyYeliTR
             this.button1.TabIndex = 11;
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Id";
+            this.Column1.HeaderText = "Id";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "UrunAd";
+            this.Column2.HeaderText = "Ürün Adı";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "BirimFiyat";
+            this.Column3.HeaderText = "Birim Fiyat ₺";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "StokAdet";
+            this.Column4.HeaderText = "Stok adet";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 125;
+            // 
+            // Resim
+            // 
+            this.Resim.DataPropertyName = "Resim";
+            this.Resim.HeaderText = "Ürün görseli";
+            this.Resim.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Resim.MinimumWidth = 6;
+            this.Resim.Name = "Resim";
+            this.Resim.ReadOnly = true;
+            this.Resim.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Resim.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Resim.Width = 125;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -193,6 +254,7 @@ namespace KuzeyYeliTR
             this.Controls.Add(this.LstKategori);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvUrunler)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboUrun)).EndInit();
             this.ResumeLayout(false);
@@ -214,6 +276,11 @@ namespace KuzeyYeliTR
         private System.Windows.Forms.Button BtnKategoriSil;
         private System.Windows.Forms.Button BtnUrunSil;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewImageColumn Resim;
     }
 }
 
